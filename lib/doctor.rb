@@ -1,0 +1,17 @@
+class Doctor
+  attr_accessor :name, :time 
+  @@all = []
+  
+  def initialize(name)
+    @name = name 
+    @@all << self 
+  end 
+  
+  def self.all 
+    @@all 
+  end 
+  
+  def new_appointment(name, time)
+    self.new(name, self, time)
+  end 
+end 
